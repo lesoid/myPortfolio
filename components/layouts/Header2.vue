@@ -85,7 +85,7 @@
           </NuxtLink>
         </div>
 
-        <div class="svg__image">
+        <!-- <div class="svg__image">
           <NuxtLink to="https://twitter.com/full_stack_jack">
             <svg class="" fill="" viewBox="0 0 24 24">
               <path
@@ -96,7 +96,7 @@
               ></path>
             </svg>
           </NuxtLink>
-        </div>
+        </div> -->
      
         <!-- <div class="svg__image cup">
           <NuxtLink to="https://twitter.com/full_stack_jack">

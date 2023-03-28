@@ -17,14 +17,14 @@
               <li>
                 <NuxtLink to="/category/catsvgExemple.vue">SvgExemple</NuxtLink>
               </li>
-              <li>
+              <!-- <li>
                 <NuxtLink to="/section">Section2</NuxtLink>
-              </li>
+              </li> -->
             </ul>
           </div>
-
+<!-- 
           <li><NuxtLink to="/about">About</NuxtLink></li>
-          <li><NuxtLink to="/contacts">Contacts</NuxtLink></li>
+          <li><NuxtLink to="/contacts">Contacts</NuxtLink></li> -->
         </ul>
       </nav>
       <!-- <strong>{{ hidenburger }}</strong> -->

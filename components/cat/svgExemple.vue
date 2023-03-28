@@ -31,7 +31,8 @@
       
     </p>
     <hr>
-   
+    <NuxtLink to="https://color-mode.nuxtjs.org/" target="_blank"> Color-Mode</NuxtLink>
+<!--    
     <div class="kub">
        <div class="icon">
         <NuxtLink to="/section">
@@ -44,7 +45,7 @@
        </div>
 
     </div>
-    <div class="bef" style="background:blueviolet;" ></div>
+    <div class="bef" style="background:blueviolet;" ></div> -->
 
   <!-- <AppOptionsSwitcherColorMode>
 
