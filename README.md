@@ -7,11 +7,13 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 Make sure to install the dependencies:
 
 ```bash
+# npm
+npm install
+
 # yarn
 yarn install
 
-# npm
-npm install
+
 
 # pnpm
 pnpm install

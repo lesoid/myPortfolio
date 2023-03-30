@@ -71,7 +71,7 @@
         </div></NuxtLink> 
                     <!-- GitHub -->
         <div class="svg__image">
-          <NuxtLink to="https://github.com/lesoid/full" target="_blank">
+          <NuxtLink to="https://github.com/lesoid/myPortfolio" target="_blank">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
