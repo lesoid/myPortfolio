@@ -1,10 +1,66 @@
+  
+<script  lang="ts">
+import { onClickOutside } from "@vueuse/core";
+
+export default {
+ //// data(){
+ // return{
+// colorMode,
+ // }
+  //},
+ // created(){
+  //  console.log('!!! color = '+ $colorMode)
+  // setup().darkclick()
+ //  },
+  // created(){
+  //   const colorMode = useColorMode();
+  //   "system"== colorMode.value?colorMode.value = "sepia":colorMode.value = "dark"
+  // },
+  
+  setup() { 
+    const colorMode = useColorMode();
+    const hideMenu = ref(true);
+    const burgerActions = ref(null);
+    
+    onClickOutside(burgerActions, () => (hideMenu.value = true));
+    
+    function darkclick() {
+      if (colorMode.value == "dark") {
+        colorMode.preference = colorMode.value = "light";
+      } else if (colorMode.value == "light") {
+        colorMode.preference = colorMode.value = "sepia";
+      } else {
+        colorMode.preference = colorMode.value = "dark";
+      }
+    }
+    return {
+      burgerActions,
+      darkclick,
+      
+      hideMenu,
+      colorMode,
+    };
+  },
+  // computed: {
+  //    col(){
+     
+  //     if ("system" == colorMode.value ) {
+  //       colorMode.value = "dark"
+  //     }
+  //     return colorMode.value
+  //       } },
+};
+</script>
 <template>
-  <div class="header_container">
+   <!-- <div class="header_container" :class="{'header_container_light': $colorMode.preference == 'light'||'sepia'? true:false}"></div> -->
+  <div class="header_container" :class="{'header_container_light': 'dark'== $colorMode.value}">
     <div class="header">
       <!-- <h2>Header</h2> -->
       <div class="name-brend">
-        <img src="/src/img/foto/MyFace.jpg" alt="logo" />
+        <!-- <img src="/src/img/foto/MyFace.jpg" alt="logo" /> -->
+       <span ><i>Valery </i></span>
       </div>
+      <div><p style="color: red;">{{ $colorMode.preference }} oo {{ $colorMode.value}}</p></div>
       <!------------- Burger Menu ---------------->
       <div :class="{ view__burger: !hideMenu }" class="burger__svg">
         <button
@@ -49,7 +105,7 @@
             height="32px"
           >
             <path
-              fill="white"
+              fill="var(--color-secondary)"
               d="M 16 3 C 8.832031 3 3 8.832031 3 16 C 3 23.167969 8.832031 
               29 16 29 C 23.167969 29 29 23.167969 29 16 C 29 8.832031
                23.167969 3 16 3 Z M 16 5 C 22.085938 5 27 9.914063 27 16 C 
@@ -331,34 +387,7 @@
     ></LayoutsPortfolioMenu>
   </div>
 </template>
-  
-<script  lang="ts">
-import { onClickOutside } from "@vueuse/core";
-export default {
-  setup() {
-    const hideMenu = ref(true);
-    const burgerActions = ref(null);
-    const colorMode = useColorMode();
-    onClickOutside(burgerActions, () => (hideMenu.value = true));
-    function darkclick() {
-      if (colorMode.value == "dark") {
-        colorMode.preference = colorMode.value = "light";
-      } else if (colorMode.value == "light") {
-        colorMode.preference = colorMode.value = "sepia";
-      } else {
-        colorMode.preference = colorMode.value = "dark";
-      }
-    }
-    return {
-      burgerActions,
-      darkclick,
 
-      hideMenu,
-      colorMode,
-    };
-  },
-};
-</script>
   
   <style scoped lang="scss">
 @media (min-width: 787px) {
@@ -374,12 +403,15 @@ export default {
 .burger__svg {
   order: 4;
   margin-right: 6px;
+  //fill: var(--color-secondary);
   & button {
     background: transparent;
     border: medium none;
     background-image: none;
     & svg {
-      color: aliceblue;
+      // color: aliceblue;
+      color: var(--color-secondary);
+      fill:var(--color-secondary);
       width: 32px;
       height: 32px;
     }
@@ -408,7 +440,7 @@ svg {
 .header_container {
   font-family: serif;
   letter-spacing: 0.6px;
-  background-image: url("/src/img/336.jpg");
+  background-image: url("/src/img/337.jpg");
   position: sticky;
   top: 0;
   background-repeat: no-repeat;
@@ -420,6 +452,9 @@ svg {
   margin-top: -8px;
   // display: inline-block;
 }
+.header_container_light{
+  background-image: url("/src/img/336.jpg");
+}
 .header {
   height: 62px;
   // background-color: aquamarine;
@@ -428,12 +463,18 @@ svg {
   align-items: center;
 }
 .svg__image {
-  margin: 0px 10px;
+  // margin-left: 10px;
+  margin-right: 25px;
   height: 1.3em;
   width: 1.3em;
   & a svg,
   svg {
-    fill: #158876;
+    // fill: #158876;
+    fill: var(--color-secondary);
+    
+  }
+  & a{
+    color: var(--color-secondary);
   }
   & :hover {
     color: #abf2d8;
@@ -446,8 +487,20 @@ svg {
 }
 .name-brend {
   height: 60px;
-  width: 50px;
-
+  // width: 50px;
+font-size: 3em;
+margin-left: 1em;
+letter-spacing: .2rem;
+//font-feature-settings: "ss01";
+// font-family:'Segoe UI', Tahoma, Geneva, Verdana, monospace;
+//font-family: cera-round-pro, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+& span ::after{
+  //border: radius 3px ;
+  content: ".";
+  position: relative;
+  font-weight: 900;
+  color: aquamarine;
+}
   & img {
     height: 58px;
     margin-left: 32px;
@@ -457,11 +510,13 @@ svg {
 }
 .svg__i{
   position: relative;
+  margin-right: 25px;
   &:after {
     position: relative;
     content: "\f1d8";
     font-family: FontAwesome;
-    color: #158876;
+   // color: #158876;
+    color: var(--color-secondary);
     font-size: 20px;
 }
 &:hover:after{

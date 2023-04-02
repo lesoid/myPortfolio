@@ -65,7 +65,7 @@
       <div class="svg_container">
    
         <div class="svg__image">
-          <NuxtLink to="https://github.com/jurassicjs/nuxt3-fullstack-tutorial">
+          <NuxtLink to="https://github.com/lesoid/myPortfolio" target="_blank">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"

@@ -105,7 +105,13 @@ export default {
       },
     ],
   }),
+
 };
+definePageMeta({
+ 
+ // layout: "default",
+  layout: "portfolio",
+});
 </script>
 
 <template>

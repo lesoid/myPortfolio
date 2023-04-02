@@ -130,9 +130,11 @@ export default {
   text-decoration: none;
   font-weight: bold;
   cursor: pointer;
-  color: rgb(180 217 187);
+  // color: rgb(180 217 187);
+  color: var(--color-primary);
   &.router-link-exact-active {
-  color:  rgb(155, 192, 162); 
+    color: var(--color-primary);
+  // color:  rgb(155, 192, 162); 
   &:hover {
     color: rgb(86, 150, 106);
   }
@@ -146,8 +148,9 @@ export default {
 
 .section {
   // position: absolute;
-  background-image: url("/src/img/336.jpg");
-  top: 115px;
+ // background-image: url("/src/img/336.jpg");
+  //top: 115px;
+  bottom: 5px;
   padding-inline-start: 5px;
   // left: 80px;
   list-style: none;
@@ -196,7 +199,8 @@ export default {
     background-image: none;
     position: absolute;
     left: 120px;
-    top: 106px;
+    //top: 106px;
+    //bottom: 10px;
     padding-inline-start: 0px;
   }
 }

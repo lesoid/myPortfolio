@@ -114,6 +114,8 @@
 <script setup lang="ts">
 definePageMeta({
   // middleware: ["guest"],
-  layout: "default",
+ // layout: "default",
+  layout: "portfolio",
 });
+
 </script>

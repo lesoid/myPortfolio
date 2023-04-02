@@ -2,7 +2,7 @@
   <div class="portfolio__item">
     <h1>About Me.</h1>
     <p>- - -</p>
-    <p>З 04/2022 року по сьогодні вивчаю Front-end та Back-end</p>
+    <p>З 07/2021 року по сьогодні вивчаю Front-end та Back-end</p>
     <!-- <br /> -->
 
     <div class="spans2">
@@ -23,11 +23,11 @@
     <br />
     <p>- - -</p>
     <br />
-    <p>З 09/2015р. до 06/2017р. вчив та використовував Autoit</p>
+    <p>З 09/2015р. до 06/2017р.</p>
     <p>Навчався основам HTML, JavaScript, CSS</p>
     <div class="spans">
       <ul>
-        <li> <span>Autoit</span></li>
+        <!-- <li> <span>Autoit</span></li> -->
         <li> <span> HTML</span></li>
         <li><span> JavaScript</span></li>
         <li> <span>CSS</span></li>
