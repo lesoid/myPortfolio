@@ -1,4 +1,4 @@
-export const useTheme = () => useState(() => true)
+export const useTheme = () => useState(() => 'dark'== useColorMode().value)
 
 // export const usePageStore = () => useState(() =>1)
 

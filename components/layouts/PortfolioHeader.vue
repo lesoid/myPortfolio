@@ -26,18 +26,18 @@ export default {
     const hideMenu = ref(true);
     const burgerActions = ref(null);
 
-    onMounted(() => {
-      if (process.client) {
-        // startColor()
+
+    onMounted(() => { 
+      if (process.client) {//клиент срабатывает хоть и с легкой задержкой
      let cc = localStorage.getItem('nuxt-color-mode')
-      //console.log('!!!bbaa= '+cc)
-      cc !== null?  th.value  = cc == 'dark': th.value = false
+      cc !== null?  th.value  = cc == 'dark': th.value = false}});
    
-       // console.log('!! onMounted= '+colorMode.preference+ ' \ '+colorMode.value)
-        // return colorMode
-    }
-  
-});
+    //   onBeforeMount(() => { //не срабатывает скорее всего процесс. сервера
+    //   if (process.client) {
+    //  let cc = localStorage.getItem('nuxt-color-mode')
+    //   cc !== null?  th.value  = cc == 'dark': th.value = false
+ 
+    // }});
 
    
     // console.log('!!!bbaa= '+localStorage.getItem('nuxt-color-mode'))
@@ -90,16 +90,19 @@ export default {
   //       } },
 };
 </script>
-<template>
+
+
+<template >
+  <div v-if="$colorMode.value =='system'"></div>
    <!-- <div class="header_container" :class="{'header_container_light': $colorMode.preference == 'light'||'sepia'? true:false}"></div> -->
-  <div class="header_container" :class="{'header_container_light': th}">
+  <div v-else class="header_container" :class="{'header_container_light': th}">
     <div class="header">
       <!-- <h2>Header</h2> -->
       <div class="name-brend">
         <!-- <img src="/src/img/foto/MyFace.jpg" alt="logo" /> -->
        <span ><i>Valery </i></span>
       </div>
-      <div><p style="color: red;">{{ $colorMode.preference }} oo {{ $colorMode.value}}</p></div>
+      <!-- <div><p style="color: red;">{{ $colorMode.preference }} oo {{ $colorMode.value}}</p></div> -->
       <!------------- Burger Menu ---------------->
       <div :class="{ view__burger: !hideMenu }" class="burger__svg">
         <button
