@@ -8,11 +8,11 @@
         <!-- $emit('ops') событие на свертывание бургер меню -->
         <li>
           <NuxtLink
-           
+            to="/"
             class="i0"
             @click.prevent="
               scroll = 'home';
-              $emit('ops');
+              // $emit('ops');
             "
           >
             Home
@@ -21,20 +21,20 @@
         <!-- <li><NuxtLink to="/"> <button class="i1" @click.prevent=" scroll='kub1';$emit('ops')">-a-</button></NuxtLink></li> -->
         <li>
           <NuxtLink
-           
+            to="/"
             @click.prevent="
               scroll = 'kub2';
-              $emit('ops');
+              // $emit('ops');
             "
             >About</NuxtLink
           >
         </li>
         <li>
           <NuxtLink
-           
+            to="/"
             @click.prevent="
               scroll = 'kub3';
-              $emit('ops');
+              // $emit('ops');
             "
             >Skills</NuxtLink
           >
@@ -44,17 +44,17 @@
             to="/"
             @click.prevent="
               scroll = 'kub4';
-              $emit('ops');
+              // $emit('ops');
             "
             >Portfolio</NuxtLink
           >
         </li>
         <li>
           <NuxtLink
-           
+            to="/"
             @click.prevent="
               scroll = 'kub5';
-              $emit('ops');
+              // $emit('ops');
             "
             >Contacts</NuxtLink
           >
@@ -97,13 +97,11 @@ export default {
   setup() {
     const hideActions = ref(true);
     const userActions = ref(null);
-
     const scroll = useScrolling();
     function passId(yy: string) {
       console.log("!!!tt " + yy);
       scroll.value = yy;
     }
-
     onClickOutside(userActions, () => (hideActions.value = true));
     return {
       scroll,
@@ -120,7 +118,7 @@ export default {
   display: flex;
   position: static;
   & :hover {
-    color: rgb(86, 150, 106);
+    color: rgb(153 108 59);
   }
 }
 .menu_text,
@@ -130,27 +128,23 @@ export default {
   text-decoration: none;
   font-weight: bold;
   cursor: pointer;
-  // color: rgb(180 217 187);
-  color: var(--color-primary);
-  &.router-link-exact-active {
-    color: var(--color-primary);
-  // color:  rgb(155, 192, 162); 
+  color:rgb(153 108 59);
+  // &.router-link-exact-active {
+  // color:  rgb(51 88 10); 
   &:hover {
-    color: rgb(86, 150, 106);
+    color:rgb(153 156 59);
   }
 }
-}
+// }
 .menu_text:after {
   content: " \25BC";
   color: #4a88b5;
   font-size: 15px;
 }
-
 .section {
   // position: absolute;
- // background-image: url("/src/img/336.jpg");
-  //top: 115px;
-  bottom: 5px;
+  // background-image: url("/src/img/336.jpg");
+ // top: 115px;
   padding-inline-start: 5px;
   // left: 80px;
   list-style: none;
@@ -168,19 +162,16 @@ export default {
   display: block;
   flex-direction: column;
 }
-
 .hiden_ul {
   display: none;
 }
-
 .header__link {
   display: flex;
   // background-color: aqua;
 }
-.router-link-exact-active {
-  color: green;
-}
-
+// .router-link-exact-active {
+//   color: green;
+// }
 @media (max-width: 787px) {
   .hiden__burger {
     display: none;
@@ -199,8 +190,8 @@ export default {
     background-image: none;
     position: absolute;
     left: 120px;
-    //top: 106px;
-    //bottom: 10px;
+    // top: 106px;
+    bottom: 10px;
     padding-inline-start: 0px;
   }
 }

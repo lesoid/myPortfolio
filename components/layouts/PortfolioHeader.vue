@@ -93,16 +93,13 @@ export default {
 
 
 <template >
-  <div v-if="$colorMode.value =='system'"></div>
-   <!-- <div class="header_container" :class="{'header_container_light': $colorMode.preference == 'light'||'sepia'? true:false}"></div> -->
-  <div v-else class="header_container" :class="{'header_container_light': th}">
+  
+ 
+    <div v-show="$colorMode.value !=='system'" class="header_container" :class="{'header_container_light': th}">
     <div class="header">
-      <!-- <h2>Header</h2> -->
       <div class="name-brend">
-        <!-- <img src="/src/img/foto/MyFace.jpg" alt="logo" /> -->
        <span ><i>Valery </i></span>
       </div>
-      <!-- <div><p style="color: red;">{{ $colorMode.preference }} oo {{ $colorMode.value}}</p></div> -->
       <!------------- Burger Menu ---------------->
       <div :class="{ view__burger: !hideMenu }" class="burger__svg">
         <button
@@ -139,7 +136,6 @@ export default {
           class=""
           aria-expanded="false"
         >
-          <!-- <span class="sr-only dark:bg-black">Open menu</span> -->
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 32 32"
@@ -495,7 +491,7 @@ svg {
   // display: inline-block;
 }
 .header_container_light{
-  background-image: url("/src/img/336.jpg");
+  background-image: url("/src/img/340.jpg");
 }
 .header {
   height: 62px;
@@ -533,11 +529,7 @@ svg {
 font-size: 3em;
 margin-left: 1em;
 letter-spacing: .2rem;
-//font-feature-settings: "ss01";
-// font-family:'Segoe UI', Tahoma, Geneva, Verdana, monospace;
-//font-family: cera-round-pro, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 & span ::after{
-  //border: radius 3px ;
   content: ".";
   position: relative;
   font-weight: 900;
@@ -557,7 +549,6 @@ letter-spacing: .2rem;
     position: relative;
     content: "\f1d8";
     font-family: FontAwesome;
-   // color: #158876;
     color: var(--color-secondary);
     font-size: 20px;
 }
