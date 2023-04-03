@@ -2,6 +2,7 @@
 <script  lang="ts">
 import { onClickOutside } from "@vueuse/core";
 
+
 export default {
  //// data(){
  // return{
@@ -21,10 +22,32 @@ export default {
     const colorMode = useColorMode();
     const hideMenu = ref(true);
     const burgerActions = ref(null);
-    
+
+    onMounted(() => {
+      if (process.client) {
+        startColor()
+     //let cc = localStorage.getItem('nuxt-color-mode')
+      //console.log('!!!bbaa= '+cc)
+     // cc !== null?  setTimeout(colorMode.preference = colorMode.value = cc, 5000):colorMode.value="sepia"
+   
+       // console.log('!! onMounted= '+colorMode.preference+ ' \ '+colorMode.value)
+        // return colorMode
+    }
+  
+});
+
+   
+    // console.log('!!!bbaa= '+localStorage.getItem('nuxt-color-mode'))
     onClickOutside(burgerActions, () => (hideMenu.value = true));
     
+    // colorMode.value = computed(() => colorMode.value).value 
+   //let value=colorMode.preference==="system" getColorScheme()
+   
+  //  window.localStorage.getItem("<%= options.storageKey %>")||"<%= options.preference %>";
     function darkclick() {
+
+      // console.log('!!!b  localStorage b= '+ window.localStorage.getItem("<%= options.storageKey %>")||"<%= options.preference %>")
+    
       if (colorMode.value == "dark") {
         colorMode.preference = colorMode.value = "light";
       } else if (colorMode.value == "light") {
@@ -33,10 +56,19 @@ export default {
         colorMode.preference = colorMode.value = "dark";
       }
     }
+    function startColor() {
+      if (process.server) {
+        console.log('!!!Process server color ' +colorMode.value)
+      } else {
+        console.log('!!!Process client color ' +colorMode.value)
+      }
+     let cc = localStorage.getItem('nuxt-color-mode')
+      colorMode.preference = colorMode.value = cc !== null? cc :"sepia"
+    }
     return {
       burgerActions,
       darkclick,
-      
+      startColor,
       hideMenu,
       colorMode,
     };
@@ -53,7 +85,7 @@ export default {
 </script>
 <template>
    <!-- <div class="header_container" :class="{'header_container_light': $colorMode.preference == 'light'||'sepia'? true:false}"></div> -->
-  <div class="header_container" :class="{'header_container_light': 'dark'== $colorMode.value}">
+  <div class="header_container" :class="{'header_container_light': 'dark'== colorMode.value}">
     <div class="header">
       <!-- <h2>Header</h2> -->
       <div class="name-brend">
@@ -149,7 +181,7 @@ export default {
 
      
 
-        <span class="hidden svg__image" @click="darkclick">
+        <span class="hidden svg__image" @click="darkclick()">
           <svg
             v-if="$colorMode.value == 'dark'"
             xmlns="http://www.w3.org/2000/svg"

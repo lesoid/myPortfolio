@@ -8,7 +8,7 @@
         <!-- $emit('ops') событие на свертывание бургер меню -->
         <li>
           <NuxtLink
-            to="/"
+           
             class="i0"
             @click.prevent="
               scroll = 'home';
@@ -21,7 +21,7 @@
         <!-- <li><NuxtLink to="/"> <button class="i1" @click.prevent=" scroll='kub1';$emit('ops')">-a-</button></NuxtLink></li> -->
         <li>
           <NuxtLink
-            to="/"
+           
             @click.prevent="
               scroll = 'kub2';
               $emit('ops');
@@ -31,7 +31,7 @@
         </li>
         <li>
           <NuxtLink
-            to="/"
+           
             @click.prevent="
               scroll = 'kub3';
               $emit('ops');
@@ -51,7 +51,7 @@
         </li>
         <li>
           <NuxtLink
-            to="/"
+           
             @click.prevent="
               scroll = 'kub5';
               $emit('ops');
