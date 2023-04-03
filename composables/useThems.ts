@@ -1,4 +1,4 @@
-export const useTheme = () => useState(() =>"light")
+export const useTheme = () => useState(() => true)
 
 // export const usePageStore = () => useState(() =>1)
 

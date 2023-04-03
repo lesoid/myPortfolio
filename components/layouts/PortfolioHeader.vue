@@ -4,10 +4,12 @@ import { onClickOutside } from "@vueuse/core";
 
 
 export default {
- //// data(){
- // return{
+ 
+ data(){
+  return{
+    th : useTheme()
 // colorMode,
- // }
+ }
   //},
  // created(){
   //  console.log('!!! color = '+ $colorMode)
@@ -16,19 +18,20 @@ export default {
   // created(){
   //   const colorMode = useColorMode();
   //   "system"== colorMode.value?colorMode.value = "sepia":colorMode.value = "dark"
-  // },
+   },
   
   setup() { 
+    const th = useTheme()
     const colorMode = useColorMode();
     const hideMenu = ref(true);
     const burgerActions = ref(null);
 
     onMounted(() => {
       if (process.client) {
-        startColor()
-     //let cc = localStorage.getItem('nuxt-color-mode')
+        // startColor()
+     let cc = localStorage.getItem('nuxt-color-mode')
       //console.log('!!!bbaa= '+cc)
-     // cc !== null?  setTimeout(colorMode.preference = colorMode.value = cc, 5000):colorMode.value="sepia"
+      cc !== null?  th.value  = cc == 'dark': th.value = false
    
        // console.log('!! onMounted= '+colorMode.preference+ ' \ '+colorMode.value)
         // return colorMode
@@ -50,10 +53,13 @@ export default {
     
       if (colorMode.value == "dark") {
         colorMode.preference = colorMode.value = "light";
+        th.value = false
       } else if (colorMode.value == "light") {
         colorMode.preference = colorMode.value = "sepia";
+        th.value = false
       } else {
         colorMode.preference = colorMode.value = "dark";
+        th.value = true
       }
     }
     function startColor() {
@@ -71,6 +77,7 @@ export default {
       startColor,
       hideMenu,
       colorMode,
+      th
     };
   },
   // computed: {
@@ -85,7 +92,7 @@ export default {
 </script>
 <template>
    <!-- <div class="header_container" :class="{'header_container_light': $colorMode.preference == 'light'||'sepia'? true:false}"></div> -->
-  <div class="header_container" :class="{'header_container_light': 'dark'== colorMode.value}">
+  <div class="header_container" :class="{'header_container_light': th}">
     <div class="header">
       <!-- <h2>Header</h2> -->
       <div class="name-brend">
