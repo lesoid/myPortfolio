@@ -18,7 +18,7 @@
         </div>
         <div class="title2"><strong>Language</strong></div>
         <hr width="80%" class="pgray" />
-        <span class="title3"><i> Javascript, TypeScript, Autoit </i></span>
+        <span class="title3"><i> Javascript, TypeScript </i></span>
       </div>
       <!-- <br /> -->
      

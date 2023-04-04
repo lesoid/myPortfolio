@@ -1,5 +1,6 @@
 <template>
   <div id="home" class="con">
+    <img src="/src/img/260.jpg" alt="0">
    <!-- <strong>props = {{ scroll }}</strong> -->
  <Portfolio id="kub1"></Portfolio>
  <PortfolioAbout id="kub2"></PortfolioAbout>
@@ -62,5 +63,21 @@ definePageMeta({
 .con {
   display: flex;
   flex-direction: column;
+  // background-image: url("/src/img/337.jpg");
+  // background-image: url("/src/img/250.jpg");
+  // background-repeat: repeat-y;
+  // background-size: cover;
+  // opacity: 0.2;
+  position: relative;
+    z-index: 2;
+  & img{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0.05;
+  }
+
 }
 </style> 

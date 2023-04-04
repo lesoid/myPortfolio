@@ -30,8 +30,15 @@
        <br>
       
     </p>
-    <hr>
-    <NuxtLink to="https://color-mode.nuxtjs.org/" target="_blank"> Color-Mode</NuxtLink>
+    <div class="links">
+    <!-- <hr  text-align="left"> -->
+    <span> <NuxtLink to="https://color-mode.nuxtjs.org/" target="_blank"> Color-Mode</NuxtLink></span><br><br>
+    <!-- <hr  > -->
+    <span><NuxtLink to="https://vueuse.org/core/onClickOutside/" target="_blank"> onClickOutside клик вне объекта </NuxtLink></span>  <br>
+    <span><NuxtLink to="https://www.npmjs.com/package/@vueuse/core" target="_blank"> ссылка на требуемый пакет</NuxtLink></span> 
+    <!-- <hr  > -->
+    <!-- <hr > -->
+  </div>
 <!--    
     <div class="kub">
        <div class="icon">
@@ -59,7 +66,47 @@ const widthsvg = "24px"
 const hightsvg = "24px"
 </script>
 
- <style lang="scss">
+ <style scoped lang="scss">
+
+.links{
+  // border: 1px solid green;
+   position: relative;
+ display: flex;
+   flex-direction: column;
+   justify-content:left;
+  }
+   span::after{
+    display: flex;
+    position: relative;
+      content:'';
+      bottom: -10px;
+      // left: 20px;
+      width: 250px;
+      height: 2px;
+      background-color: #103b15;
+      // opacity: 0;
+      transition: all .25s;
+    opacity: 1;
+   
+  }
+  .main-menu__item ::after{
+      position: absolute;
+      content:'';
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #103b15;
+      opacity: 0;
+      transition: all .25s;
+    
+    }
+    .main-menu__item :hover ::after{
+      bottom: -3px;
+      opacity: 1;
+
+    }
+
 
 .bef{
   width: 300px;

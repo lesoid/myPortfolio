@@ -402,7 +402,7 @@ svg {
 .header_container {
  font-family:serif;
  letter-spacing:.6px;
-  background-image: url("/src/img/336.jpg");
+  background-image: url("/src/img/340.jpg");
   position: sticky;
   top: 0;
   background-repeat: no-repeat;
