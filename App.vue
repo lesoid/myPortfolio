@@ -1,7 +1,7 @@
 <template>
      <LayoutsPortfolioHeader id="header_layout"></LayoutsPortfolioHeader>
      <NuxtLayout >
-       <NuxtPage class="def__slot"/>
+       <NuxtPage/>
    </NuxtLayout>
    <LayoutsFooter></LayoutsFooter>
  

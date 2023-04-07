@@ -8,7 +8,7 @@
  <PortfolioPortf id="kub4"></PortfolioPortf>
  <PortfolioContacts id="kub5"></PortfolioContacts>
   </div>
-
+n
   <hr />
 </template>
 <script setup  lang="ts">
