@@ -10,6 +10,10 @@
 .portfolio__item{
 margin-top: 100px;
 }
+
+// h1{
+//   font-family: 'Sofia Sans Semi Condensed', sans-serif;
+// }
    
 
 

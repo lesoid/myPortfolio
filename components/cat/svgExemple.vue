@@ -8,6 +8,9 @@
       <option value="sepia">Sepia</option>
     </select>
   </div>
+  <div class="preloader overlay" >
+     <i><b> +++++++++++++  Overley +++++++++++++ </b></i>
+  </div>
   <p>
       <!--because the base is consistent, you can use multiple icons on the same line and they're all in order-->
       <icon-base icon-name="sun2" :width="widthsvg" :height="hightsvg"><icons-icon-sun2 /></icon-base>
@@ -159,6 +162,40 @@ font-size: 3em;
   }
 
  }
+ .prel{
+  border: #dce7dd solid 1px;
+ }
+
+//  -------------overlay--------------------------
+ .overlay1:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(140, 90, 90, 0.7);
+  z-index: -5; //сделай индекс большой overlay все перекроет
+}
+.preloader1:after {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  width: 40px;
+  margin: auto;
+  background: rgb(245, 244, 244) url(http://www.jacklmoore.com/colorbox/example1/images/loading.gif) no-repeat center center;
+  border-radius: 6px;
+  z-index: -3;//сделай индекс большой overlay все перекроет
+}
+
+//----------------------------------------------------------
+
 /* body {
   background-color: #fff;
   color: rgba(0,0,0,0.8);

@@ -83,7 +83,7 @@ font-size: 15px;
 
 .section {
   // position: absolute;
-  background-image: url("/src/img/336.jpg");
+  // background-image: url("/src/img/336.jpg");
   top:115px;
   padding-inline-start: 5px;
   // left: 80px;

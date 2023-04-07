@@ -9,18 +9,21 @@ export default defineNuxtConfig({
   //   componentName: 'ColorScheme',
   //   classPrefix: '',
   //   classSuffix: '-mode',
-  //   storageKey: 'nuxt-color-mode'
+  //   storageKey: 'nuxt-color-mode', crossorigin
  // },
   css: ['@/assets/main.css', '@/assets/styles/portfolio.scss'],
   app: {
     head: {
       script: [ { } ],
       link: [
+      {  rel:"preconnect", href:"https://fonts.googleapis.com"},//Стили шрифтов с Google
+      { rel:"preconnect", href:"https://fonts.gstatic.com" },
+      {href:"https://fonts.googleapis.com/css2?family=Satisfy&display=swap&family=Sofia+Sans+Semi+Condensed:ital,wght@1,600&display=swap" ,rel:"stylesheet"},
         {
           rel: 'stylesheet',
           href: "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
         },
-		 { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+     		 { rel: 'icon', type: 'image/png', href: '/favicon.png' },
       ]
     }
   }

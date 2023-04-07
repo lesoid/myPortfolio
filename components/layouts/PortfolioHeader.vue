@@ -8,16 +8,7 @@ export default {
  data(){
   return{
     th : useTheme()
-// colorMode,
  }
-  //},
- // created(){
-  //  console.log('!!! color = '+ $colorMode)
-  // setup().darkclick()
- //  },
-  // created(){
-  //   const colorMode = useColorMode();
-  //   "system"== colorMode.value?colorMode.value = "sepia":colorMode.value = "dark"
    },
   
   setup() { 
@@ -32,25 +23,11 @@ export default {
      let cc = localStorage.getItem('nuxt-color-mode')
       cc !== null?  th.value  = cc == 'dark': th.value = false}});
    
-    //   onBeforeMount(() => { //не срабатывает скорее всего процесс. сервера
-    //   if (process.client) {
-    //  let cc = localStorage.getItem('nuxt-color-mode')
-    //   cc !== null?  th.value  = cc == 'dark': th.value = false
- 
-    // }});
-
-   
-    // console.log('!!!bbaa= '+localStorage.getItem('nuxt-color-mode'))
     onClickOutside(burgerActions, () => (hideMenu.value = true));
     
-    // colorMode.value = computed(() => colorMode.value).value 
-   //let value=colorMode.preference==="system" getColorScheme()
-   
-  //  window.localStorage.getItem("<%= options.storageKey %>")||"<%= options.preference %>";
     function darkclick() {
 
-      // console.log('!!!b  localStorage b= '+ window.localStorage.getItem("<%= options.storageKey %>")||"<%= options.preference %>")
-    
+ 
       if (colorMode.value == "dark") {
         colorMode.preference = colorMode.value = "light";
         th.value = false
@@ -80,14 +57,7 @@ export default {
       th
     };
   },
-  // computed: {
-  //    col(){
-     
-  //     if ("system" == colorMode.value ) {
-  //       colorMode.value = "dark"
-  //     }
-  //     return colorMode.value
-  //       } },
+
 };
 </script>
 
@@ -525,7 +495,10 @@ svg {
 }
 .name-brend {
   height: 60px;
-  // width: 50px;
+  // width: 50px;'Pacifico'
+ //font-family: 'Alkatra', cursive;
+  // font-family: 'Lobster', cursive;
+   font-family: 'Satisfy', cursive;
 font-size: 3em;
 margin-left: 1em;
 letter-spacing: .2rem;

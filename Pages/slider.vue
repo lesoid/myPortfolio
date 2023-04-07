@@ -64,26 +64,26 @@ export default {
       {
         title: " Slide #1",
         // content: 'Slide 2 content.',
-        image: "/src/img/slider/71.jpg",
+        image: "/src/img/slider/72.jpg",
         content: "Slide HTML",
       },
       {
         title: "  Slide #2",
         // content: 'Slide 3 content.',
-        image: "/src/img/slider/72.jpg",
+        image: "/src/img/slider/71.jpg",
         content: " Slide  HTML",
       },
       {
         title: " El Teide Volcano, Spain #3",
         content: "Photo ",
         // You can also provide a URL for the image.
-        image: "/src/img/slider/73.jpg",
+        image: "/src/img/slider/74.jpg",
         //link: 'https://www.maxrivephotography.com/index/C0000rU1RKCHdqwI/G0000X57AtIzuRX0/I0000Gvr9HqdtyXk'
       },
       {
         title: " Slide #4",
         //content: 'Slide 1 content.',
-        image: "/src/img/slider/74.jpg",
+        image: "/src/img/slider/73.jpg",
         content: "Slide ",
       },
       {
@@ -110,7 +110,7 @@ export default {
 definePageMeta({
  
  // layout: "default",
-  layout: "portfolio",
+ // layout: "portfolio",
 });
 </script>
 

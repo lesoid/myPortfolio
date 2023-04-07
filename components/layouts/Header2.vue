@@ -2,9 +2,11 @@
   <div class="header_container">
     <div class="header">
       <!-- <h2>Header</h2> -->
-      <div  class="name-brend" >
-       <img src="/src/img/foto/MyFace.jpg" alt="logo"> 
+    
+       <div class="name-brend">
+       <span ><i>Valery </i></span>
       </div>
+      
 <!-- <div style="color:aliceblue">colorMode = {{ colorMode.value }} || $colorMode.preference= {{$colorMode.preference}}</div> -->
 
       <div :class="{ view__burger: !hideMenu }" class="burger__svg">
@@ -438,9 +440,20 @@ svg {
 }
 .name-brend {
   height: 60px;
-  width: 50px;
- 
-  & img{
+  // width: 50px;'Pacifico'
+ //font-family: 'Alkatra', cursive;
+  // font-family: 'Lobster', cursive;
+   font-family: 'Satisfy', cursive;
+font-size: 3em;
+margin-left: 1em;
+letter-spacing: .2rem;
+& span ::after{
+  content: ".";
+  position: relative;
+  font-weight: 900;
+  color: aquamarine;
+}
+  & img {
     height: 58px;
     margin-left: 32px;
     border-radius: 15%;
