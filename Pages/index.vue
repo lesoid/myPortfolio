@@ -25,8 +25,9 @@ watch(scroll, value => {
   console.log("!!!Watch "+value)})
 function goScroll(ar: string) {
   let  count:number
-  let indent:number = 10 //отступ прокрутки от хедера
-  //console.log('!!!goScroll START '+ar);
+  let indent:number = 220 //отступ прокрутки от хедера
+  window.innerWidth > 786 ? indent = 100 : indent
+  console.log('!!! window.innerWidth '+window.innerWidth);
   if (process.client){
    // console.log("!!! goScroll client "); 
   if (ar == "home") {
@@ -41,7 +42,7 @@ function goScroll(ar: string) {
    // if (elementPosition2 != null) {  console.log("!!!Height header offsetHeight" + elementPosition2.offsetHeight);} // 👉️ "number px from top "
   // -----------------------end----------------------
     if (elementPosition != null && elementPosition2 != null) {
-         count = elementPosition.offsetTop-elementPosition2.offsetHeight -indent  
+         count = elementPosition.offsetTop-elementPosition2.offsetHeight +indent 
       window.scrollTo({
         top: count, //с учетом высоты хедера
         behavior: "smooth",
@@ -53,9 +54,9 @@ function goScroll(ar: string) {
        console.log("!!! goScroll server "); 
   }
 }
-definePageMeta({
-  layout: "portfolio",
-})
+// definePageMeta({
+//   layout: "portfolio",
+// })
 </script>
 
 

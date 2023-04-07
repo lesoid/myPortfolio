@@ -1,31 +1,40 @@
   
-<script  lang="ts">
+<script setup lang="ts">
 import { onClickOutside } from "@vueuse/core";
+const colorMode =  useColorMode();
+const hideMenu = ref(true);
+const th = useTheme()
+const burgerActions = ref(null);
 
+console.log('!!! colorMode.value do >  '+ colorMode.value) 
+  watch( colorMode, ()=>{colorMode.value == 'dark'? th.value =true:th.value =false})
 
-export default {
- 
- data(){
-  return{
-    th : useTheme()
- }
-   },
   
-  setup() { 
-    const th = useTheme()
-    const colorMode = useColorMode();
-    const hideMenu = ref(true);
-    const burgerActions = ref(null);
+//onMounted(() => { 
+   // console.log('!!!onMounted start  ') 
+    // for (let index = 0; index < 20; index++) {
+    //     let cc = localStorage.getItem('nuxt-color-mode')
+     //  setTimeout(() => { }, 500);
+     // ()=> colorMode.value = 'sepia'
+    // console.log('!!!onMounted for index  '+index)
+    //  console.log('!!!onMounted cc '+ cc ) 
+    //console.log('!!!onMounted colorMode.value >  '+ colorMode.value) 
+    //   // if (cc !=='system' )
+    //  if (colorMode.value !=='system'&& cc !=='system' )
+  
+    //  colorMode.value = 'sepia'
+    //   localStorage.setItem('nuxt-color-mode',colorMode.value );
+    //      th.value=false
+        // break; 
+   // }
+    // }
+   // );
 
-
-    onMounted(() => { 
-      if (process.client) {//клиент срабатывает хоть и с легкой задержкой
-     let cc = localStorage.getItem('nuxt-color-mode')
-      cc !== null?  th.value  = cc == 'dark': th.value = false}});
+  
    
-    onClickOutside(burgerActions, () => (hideMenu.value = true));
+     onClickOutside(burgerActions, () => (hideMenu.value = true));
     
-    function darkclick() {
+     function darkclick() {
 
  
       if (colorMode.value == "dark") {
@@ -39,37 +48,22 @@ export default {
         th.value = true
       }
     }
-    function startColor() {
-      if (process.server) {
-        console.log('!!!Process server color ' +colorMode.value)
-      } else {
-        console.log('!!!Process client color ' +colorMode.value)
-      }
-     let cc = localStorage.getItem('nuxt-color-mode')
-      colorMode.preference = colorMode.value = cc !== null? cc :"sepia"
-    }
-    return {
-      burgerActions,
-      darkclick,
-      startColor,
-      hideMenu,
-      colorMode,
-      th
-    };
-  },
+ 
+   
 
-};
 </script>
 
 
 <template >
   
  
-    <div v-show="$colorMode.value !=='system'" class="header_container" :class="{'header_container_light': th}">
+   <div v-show="$colorMode.value !=='system'" class="header_container" :class="{'header_container_light': th}"> 
+   
     <div class="header">
       <div class="name-brend">
        <span ><i>Valery </i></span>
       </div>
+      <!-- <div>{{ th }}"   "{{ colorMode.value }}</div> -->
       <!------------- Burger Menu ---------------->
       <div :class="{ view__burger: !hideMenu }" class="burger__svg">
         <button
@@ -159,7 +153,7 @@ export default {
 
         <span class="hidden svg__image" @click="darkclick()">
           <svg
-            v-if="$colorMode.value == 'dark'"
+            v-if="colorMode.value == 'dark'"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
@@ -169,7 +163,7 @@ export default {
             />
           </svg>
           <svg
-            v-if="$colorMode.value == 'light'"
+            v-if="colorMode.value == 'light'"
             xmlns="http://www.w3.org/2000/svg"
             class="svg__image"
             viewBox="0 0 20 20
@@ -184,7 +178,7 @@ export default {
             />
           </svg>
           <svg
-            v-if="$colorMode.value == 'sepia'"
+            v-if="colorMode.value == 'sepia'"
             version="1.1"
             id="Layer_1"
             xmlns="http://www.w3.org/2000/svg"

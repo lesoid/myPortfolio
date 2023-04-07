@@ -12,7 +12,7 @@
             class="i0"
             @click.prevent="
               scroll = 'home';
-              // $emit('ops');
+              $emit('ops');
             "
           >
             Home
@@ -24,7 +24,7 @@
             to="/"
             @click.prevent="
               scroll = 'kub2';
-              // $emit('ops');
+              $emit('ops');
             "
             >About</NuxtLink
           >
@@ -34,7 +34,7 @@
             to="/"
             @click.prevent="
               scroll = 'kub3';
-              // $emit('ops');
+               $emit('ops');
             "
             >Skills</NuxtLink
           >
@@ -44,7 +44,7 @@
             to="/"
             @click.prevent="
               scroll = 'kub4';
-              // $emit('ops');
+               $emit('ops');
             "
             >Portfolio</NuxtLink
           >
@@ -54,12 +54,12 @@
             to="/"
             @click.prevent="
               scroll = 'kub5';
-              // $emit('ops');
+               $emit('ops');
             "
             >Contacts</NuxtLink
           >
         </li>
-        <div @click="hideActions = !hideActions">
+        <!-- <div @click="hideActions = !hideActions">
           <p class="menu_text">Other</p>
           <ul
             ref="userActions"
@@ -72,11 +72,9 @@
             <li>
               <NuxtLink to="/category/catsvgExemple.vue">SvgExemple</NuxtLink>
             </li>
-            <!-- <li>
-              <NuxtLink to="/section">Section2</NuxtLink>
-            </li> -->
+            
           </ul>
-        </div>
+        </div> -->
         <!-- <li><NuxtLink to="/about">About</NuxtLink></li>
           <li><NuxtLink to="/contacts">Contacts</NuxtLink></li> -->
       </ul>

@@ -1,8 +1,16 @@
 <template>
-    <Header></Header>
-     <NuxtLayout>
-       <NuxtPage />
+     <LayoutsPortfolioHeader id="header_layout"></LayoutsPortfolioHeader>
+     <NuxtLayout >
+       <NuxtPage class="def__slot"/>
    </NuxtLayout>
-   <!-- <h5>idj,</h5> -->
+   <LayoutsFooter></LayoutsFooter>
+ 
  
  </template>
+
+ 
+  
+ 
+ <script setup lang="ts">
+ 
+ </script>
