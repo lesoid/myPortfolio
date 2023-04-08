@@ -8,7 +8,10 @@ const burgerActions = ref(null);
 
 console.log('!!! colorMode.value do >  '+ colorMode.value) 
   watch( colorMode, ()=>{colorMode.value == 'dark'? th.value =true:th.value =false})
-
+  // onMounted(() => { 
+  //     if (process.client) {//клиент срабатывает хоть и с легкой задержкой
+  //    let cc = localStorage.getItem('nuxt-color-mode')
+  //     cc !== null?  th.value  = cc == 'dark': th.value = false}});
   
 //onMounted(() => { 
    // console.log('!!!onMounted start  ') 
